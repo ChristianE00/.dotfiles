@@ -23,12 +23,27 @@ config.colors = {
 local dimmer = { brightness = 0.1 }
 
 -- Background image
--- config.window_background_image = "C:\\Users\\p1273\\OneDrive\\Pictures\\purple.jpg"
+config.window_background_image = "C:\\Users\\p1273\\OneDrive\\Pictures\\purple.jpg"
 config.window_background_image_hsb = {
     -- Adjust the hue, saturation, and brightness
     hue = 1.11,
     saturation = 0.8,
     brightness = 0.05,
+}
+config.keys = {
+    {key="D", mods="CTRL|SHIFT", action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
+    {key="D", mods="CTRL|SHIFT|ALT", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
+-- Add this inside your existing configuration, within the `keys` table
+    {key="X", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentPane={confirm=true}}},
+ -- Custom key binding for moving focus to the left pane
+  {key="LeftArrow", mods="ALT", action=wezterm.action{ActivatePaneDirection="Left"}},
+  -- Custom key binding for moving focus to the right pane
+  {key="RightArrow", mods="ALT", action=wezterm.action{ActivatePaneDirection="Right"}},
+  -- Custom key binding for moving focus to the pane above
+  {key="UpArrow", mods="ALT", action=wezterm.action{ActivatePaneDirection="Up"}},
+  -- Custom key binding for moving focus to the pane below
+  {key="DownArrow", mods="ALT", action=wezterm.action{ActivatePaneDirection="Down"}},
+
 }
 
 
@@ -62,4 +77,3 @@ config.font = wezterm.font_with_fallback({
 
 
 return config
-
