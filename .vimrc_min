@@ -10,19 +10,6 @@ colorscheme desert
 set showmatch
 set pastetoggle=<F2>
 set backspace=indent,eol,start
-
-" Use system clipboard for yank and paste
-set clipboard=unnamedplus
-
-" Custom mappings for clipboard operations
-" Type \y to save to clipboard
-nmap <Leader>y "+y
-nmap <Leader>Y "+yg_
-nmap <Leader>d "+d
-nmap <Leader>D "+d$
-nmap <Leader>p "+p
-nmap <Leader>P "+P
-vmap <Leader>y "+y
-vmap <Leader>d "+d
-vmap <Leader>p "+p
-vmap <Leader>P "+P
+" Map clipboard to Vim
+vnoremap <C-c> "+y
+map <C-v> "+P
