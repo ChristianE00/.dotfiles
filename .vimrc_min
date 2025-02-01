@@ -1,15 +1,31 @@
+" General set up
+syntax on
+set autoread
+set backspace=indent,eol,start
 set number
 set relativenumber
 set autoindent
 set tabstop=2
 set shiftwidth=2
-set expandtab
-syntax on
+set smarttab
+set softtabstop=2
+
+" Theme
 colorscheme desert
-" set cursorline
+
+" Enable true color support
+set termguicolors
+
+" Adjust CursorLine highlight with a blended color for a 'transparency-like' effect
+highlight CursorLine guibg=#8D7A61
+
+" Other settings
 set showmatch
+set cursorline
 set pastetoggle=<F2>
 set backspace=indent,eol,start
+
 " Map clipboard to Vim
 vnoremap <C-c> "+y
 map <C-v> "+P
+
